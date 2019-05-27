@@ -18,12 +18,29 @@ namespace HamburgueriaWeb.Repositorio
                 var valores =  item.Split(";");
                 Shake shake = new Shake();
                 shake.Nome = valores[1];
+                shake.Preco = double.Parse(valores[2]);
                 
                 shakes.Add(shake);
 
 
             }
             return shakes;
+        }
+
+        public double ObterPrecoDe(string NomeShake)
+        {
+            var lista = Listar();
+
+            var preco = 0.0;
+
+            foreach (var item in lista)
+            {
+                if (item.Nome.Equals(NomeShake))
+                {
+                    preco = item.Preco;
+                }
+            }
+            return preco;
         }
     }
 }

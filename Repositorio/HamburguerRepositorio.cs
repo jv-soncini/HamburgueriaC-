@@ -18,12 +18,28 @@ namespace HamburgueriaWeb.Repositorio
                 var valores =  item.Split(";");
                 Hamburguer hamburguer = new Hamburguer();
                 hamburguer.Nome = valores[1];
+                hamburguer.Preco = double.Parse(valores[2]);
                 
                 hamburgueres.Add(hamburguer);
 
 
             }
             return hamburgueres;
+        }
+        public double ObterPrecoDe(string NomeHamburguer)
+        {
+            var lista = Listar();
+
+            var preco = 0.0;
+
+            foreach (var item in lista)
+            {
+                if (item.Nome.Equals(NomeHamburguer))
+                {
+                    preco = item.Preco;
+                }
+            }
+            return preco;
         }
     }
 }

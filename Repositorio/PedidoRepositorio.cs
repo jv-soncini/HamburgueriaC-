@@ -17,7 +17,7 @@ namespace HamburgueriaWeb.Repositorio
                 File.Create("DataBase/Pedido.csv").Close();
             }
 
-            var registro = $"{pedido.Id};{pedido.Cliente.Nome};{pedido.Cliente.Telefone};{pedido.Cliente.Endererco};{pedido.Cliente.Email};{pedido.Hamburguer.Nome};{pedido.Shake.Nome};{pedido.DataPedido}\n";
+            var registro = $"{pedido.Id};{pedido.Cliente.Nome};{pedido.Cliente.Telefone};{pedido.Cliente.Endererco};{pedido.Cliente.Email};{pedido.Hamburguer.Nome};{pedido.Hamburguer.Preco};{pedido.Shake.Nome};{pedido.Shake.Preco};{pedido.DataPedido}\n";
 
             File.AppendAllText("DataBase/Pedido.csv", registro);
             } catch(Exception e)

@@ -49,13 +49,15 @@ namespace HamburgueriaWeb.Controllers
             pedido.Cliente = cliente;
             // Forma 2- usa parametros nos contrutores
             Hamburguer hamburguer = new Hamburguer(
-                Nome: form["hamburguer"]
+                Nome: form["hamburguer"],
+                Preco: hamburguerrepositorio.ObterPrecoDe(form["hamburguer"])
             );
 
             pedido.Hamburguer = hamburguer;
 
             Shake shake = new Shake() {
-                Nome = form["shake"]
+                Nome = form["shake"],
+                Preco = shakerepositorio.ObterPrecoDe(form["shake"])
             };
 
             pedido.Shake = shake;
