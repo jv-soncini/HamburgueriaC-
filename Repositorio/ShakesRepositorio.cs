@@ -6,7 +6,7 @@ namespace HamburgueriaWeb.Repositorio
 {
     public class ShakesRepositorio
     {
-        private const string PATH = "DataBase/Shake";
+        private const string PATH = "DataBase/Shake.csv";
 
         private List<Shake> shakes = new List<Shake>();
 

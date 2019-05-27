@@ -6,7 +6,7 @@ namespace HamburgueriaWeb.Repositorio
 {
     public class HamburguerRepositorio
     {
-        private const string PATH = "DataBase/Hamburguer";
+        private const string PATH = "DataBase/Hamburguer.csv";
 
         private List<Hamburguer> hamburgueres = new List<Hamburguer>();
 

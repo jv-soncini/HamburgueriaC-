@@ -1,5 +1,6 @@
 using HamburgueriaWeb.Models;
 using HamburgueriaWeb.Repositorio;
+using HamburgueriaWeb.ViewModel;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,8 +20,12 @@ namespace HamburgueriaWeb.Controllers
         {
             var hamburgueres = hamburguerrepositorio.Listar();
             var shakes = shakerepositorio.Listar();
-            
-            return View();
+
+            PedidoViewModel pedido = new PedidoViewModel();
+            pedido.Hamburgueres = hamburgueres;
+            pedido.Shakess = shakes;
+
+            return View(pedido);
         }
         [HttpPost]
         public IActionResult RegistrarPedido(IFormCollection form)
