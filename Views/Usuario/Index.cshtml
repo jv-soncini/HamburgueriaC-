@@ -1,0 +1,55 @@
+@model AppEstacionamento.ViewModel.RegistroViewModel;
+@{
+    Layout = "MasterPage";
+    ViewBag.Title = "Registro";
+}
+<main class="caixinha">
+
+<div class="container">
+
+<form action="/Usuario/Index" method="POST">
+<h1>Bem vindo</h1>
+    <div class="form-group">
+    <label>Nome do condutor</label>
+    <input type="text" name="nome" class="form-control" >
+    <label for="placa">Placa</label>
+    <input type="text" name="placa" class="form-control">
+    
+   <div class="form-group ">
+     <div class="double-field">
+
+       <div class="robert">
+
+      <label for="sel1">Modelo do carro</label>
+        <select class="form-control" id="modelo" required name="modelo">
+          <option value="" disabled selected>Selecione</option>
+            @foreach(var h in Model.Modelos)
+           {
+             <option value="@h.NomeDoModelo">@h.NomeDoModelo</option>
+           }
+         </select>
+       </div>
+
+      <div class="robert">
+
+      <label for="sel1">Marca do carro</label>
+      <select class="form-control" id="marca" required name="marca">
+          <option value="" disabled selected>Selecione</option>
+            @foreach(var d in Model.Marcas)
+           {
+             <option value="@d.NomeDaMarca">@d.NomeDaMarca</option>
+           }
+         </select>
+       </div>
+     </div>
+      
+      
+
+
+    <label for="dataNascimento">data de nascimento    </label>
+    <input type="date" name="dataNascimento" class="form-control">
+    <input type="submit" value="Registro" class="btn btn-primary btn-lg btn-block">
+    </div>
+</form>
+</div>
+</main>
